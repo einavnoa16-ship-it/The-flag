@@ -10,12 +10,19 @@ screen=pygame.display.set_mode(size)
 pygame.display.set_caption("game")
 
 #background color of the screen
-img=pygame.image.load()
-screen.blit(img,(0,0))
+screen.fill(consts.BACK_GROUND_COLOR_GREEN)
 pygame.display.flip()
 
-# screen.fill(consts.BACK_GROUND_COLOR_GREEN)
-# pygame.display.flip()
+soldier_player=pygame.image.load('pictures/soldier.png').convert()
+screen.blit(soldier_player,[0,0])
+pygame.display.flip()
+# #soldier place
+# my_matrix=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','','']]
+# for i in range(my_matrix):
+#     for j in range(my_matrix[i]):
+#         if soldier.place[0]==i and soldier.place[1]==j:
+#
+#
 
 #the infinite loop
 finish =False
