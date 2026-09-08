@@ -1,16 +1,31 @@
-# This is a sample Python script.
+import consts
+import soldier
+import pygame
+import pictures
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#screen of the game
+pygame.init()
+size=(consts.WINDOW_WIDTH,consts.WINDOW_HEIGHT)
+screen=pygame.display.set_mode(size)
+pygame.display.set_caption("game")
+
+#background color of the screen
+img=pygame.image.load()
+screen.blit(img,(0,0))
+pygame.display.flip()
+
+# screen.fill(consts.BACK_GROUND_COLOR_GREEN)
+# pygame.display.flip()
+
+#the infinite loop
+finish =False
+while not finish:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            finish=True
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+pygame.quit()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
