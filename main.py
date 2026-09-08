@@ -1,16 +1,11 @@
 # This is a sample Python script.
+from socket import create_server
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import consts
+import game_field
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)  #check if creat game field
+    game_field.mine_in_random_places(consts.MINES_COUNT,board,consts.BOARD_ROWS,consts.BOARD_COLS)
+    game_field.creat_flag(board,consts.FLAG_ROWS,consts.FLAG_COLS,game_field.flag_row,game_field.flag_col)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
