@@ -22,6 +22,6 @@ def random_bosh(field,rows,cols):
             continue
 
     for i in range(consts.BOARD_ROWS):
-        print(field[i])
-        print(end="\n")
+        print(field[i],end="\n")
+
     return field
