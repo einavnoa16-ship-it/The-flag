@@ -1,16 +1,76 @@
-# This is a sample Python script.
+import consts
+import game_field
+import grass
+import soldier
+import pygame
+import pictures
+from PIL import Image
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# screen of the game
+pygame.init()
+size = (consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT)
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption("game")
+
+# background color of the screen
+screen.fill(consts.BACK_GROUND_COLOR_GREEN)
+pygame.display.flip()
+
+#soldier place
+background=(255,35,240)
+soldier_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS,consts.CELL_SIZE*consts.SOLDIER_COLS)
+soldier_place=[100,200]#game_field.get_soldier_place()
+soldier_img=Image.open('pictures/soldier.png')
+soldier_img.thumbnail(soldier_size)
+soldier_img.save('pictures/soldier.png')
+soldier_player = pygame.image.load('pictures/soldier.png').convert()
+soldier_player.set_colorkey(background)
+screen.blit(soldier_player, soldier_place)
+pygame.display.flip()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#flag place
+flag_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS,consts.CELL_SIZE*consts.SOLDIER_COLS)
+flag=pygame.image.load('pictures/flag.png')
+flag_place=[consts.WINDOW_WIDTH-40,consts.WINDOW_HEIGHT-40]
+flag_img=Image.open('pictures/flag.png')
+flag_img.thumbnail(flag_size)
+flag_img.save('pictures/flag.png')
+screen.blit(flag,flag_place)
+pygame.display.flip()
+
+# screen_night=pygame.Surface.copy(screen)
+# pygame.display.flip()
+#-------------for loop on bush places
+board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)
+list_b_p=grass.random_bosh(board,consts.BOARD_ROWS,consts.BOARD_COLS)
+grass_image=pygame.image.load('pictures/grass.png')
+grass_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,consts.CELL_SIZE*consts.SOLDIER_COLS+1)
+grass_place=[0,0]
+grass_img=Image.open('pictures/grass.png')
+grass_img.thumbnail(grass_size)
+grass_img.save('pictures/grass.png')
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+for r in range(len(list_b_p)):
+
+        grass_place=[(list_b_p[r][0])*consts.CELL_SIZE+150,(list_b_p[r][1])*consts.CELL_SIZE*0.500 ]
+        screen.blit(grass_image,grass_place)
+        pygame.display.flip()
+
+
+
+
+# the infinite loop
+finish = False
+while not finish:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            finish = True
+
+pygame.quit()
+
+
+#+150#*0.500
