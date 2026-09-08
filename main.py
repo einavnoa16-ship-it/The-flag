@@ -1,4 +1,6 @@
 import consts
+import game_field
+import grass
 import soldier
 import pygame
 import pictures
@@ -37,6 +39,28 @@ flag_img.save('pictures/flag.png')
 screen.blit(flag,flag_place)
 pygame.display.flip()
 
+# screen_night=pygame.Surface.copy(screen)
+# pygame.display.flip()
+#-------------for loop on bush places
+board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)
+list_b_p=grass.random_bosh(board,consts.BOARD_ROWS,consts.BOARD_COLS)
+grass_image=pygame.image.load('pictures/grass.png')
+grass_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,consts.CELL_SIZE*consts.SOLDIER_COLS+1)
+grass_place=[0,0]
+grass_img=Image.open('pictures/grass.png')
+grass_img.thumbnail(grass_size)
+grass_img.save('pictures/grass.png')
+
+
+
+
+for r in range(len(list_b_p)):
+
+        grass_place=[(list_b_p[r][0])*consts.CELL_SIZE+150,(list_b_p[r][1])*consts.CELL_SIZE*0.500 ]
+        screen.blit(grass_image,grass_place)
+        pygame.display.flip()
+
+
 
 
 # the infinite loop
@@ -49,4 +73,4 @@ while not finish:
 pygame.quit()
 
 
-
+#+150#*0.500
