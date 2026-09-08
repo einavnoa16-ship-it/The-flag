@@ -28,18 +28,16 @@ pygame.display.flip()
 
 
 #flag place
+flag_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS,consts.CELL_SIZE*consts.SOLDIER_COLS)
 flag=pygame.image.load('pictures/flag.png')
-screen.blit(flag,[consts.WINDOW_WIDTH-100,consts.WINDOW_HEIGHT-100])
+flag_place=[consts.WINDOW_WIDTH-40,consts.WINDOW_HEIGHT-40]
+flag_img=Image.open('pictures/flag.png')
+flag_img.thumbnail(flag_size)
+flag_img.save('pictures/flag.png')
+screen.blit(flag,flag_place)
 pygame.display.flip()
 
 
-# #soldier place
-# my_matrix=[['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','',''],['','','','','','','']]
-# for i in range(my_matrix):
-#     for j in range(my_matrix[i]):
-#         if soldier.place[0]==i and soldier.place[1]==j:
-#
-#
 
 # the infinite loop
 finish = False
