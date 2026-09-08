@@ -53,6 +53,8 @@ def creat_flag(field ,flag_size_row,flag_size_col,flag_row,flag_col):#flag place
     return field
 
 
+#def get_soldier_place()
+
 
 
 
