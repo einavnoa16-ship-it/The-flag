@@ -5,4 +5,7 @@ from PIL import Image
 
 
 image = Image.open('pictures/soldier.png')
-image.show()
+
+#image.show()
+
+
