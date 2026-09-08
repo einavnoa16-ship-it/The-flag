@@ -47,11 +47,13 @@ def creat_flag(field ,flag_size_row,flag_size_col,flag_row,flag_col):#flag place
             col+=1
         col=flag_col
         row+=1
-    for i in range(consts.BOARD_ROWS):
-        print(field[i])
-        print(end="\n")
+    # for i in range(consts.BOARD_ROWS):
+    #     print(field[i])
+    #     print(end="\n")
     return field
 
+
+#def get_soldier_place()
 
 
 
