@@ -10,7 +10,7 @@ image = Image.open('pictures/mine.png')
 
 
 # image.show()
-
+list_mine=[]
 
 def mine_in_random_places(mines_number, field, rows,
                           cols):  # puting mines in random places
@@ -22,20 +22,20 @@ def mine_in_random_places(mines_number, field, rows,
             for i in range(3):
                 field[row][col] = "m"
                 col += 1
-        list = []
+
     for i in range(len(field)):
          for j in range(len(field[i])):
             if field[i][j] == "m":
-                list.append(list([[i][j]]))
+                list_mine.append(list([i,j]))
 
 
-    for i in range(list):
-        print(list[i])
-    print(end="\n")
+    # for i in range(len(list_mine)):
+    #     print(list_mine[i])
+    # print(end="\n")
     #printing file with mines
 
 
-    return list
+    return list_mine
 
 # board=game_field.
 # def list_of_mines_places(field):
