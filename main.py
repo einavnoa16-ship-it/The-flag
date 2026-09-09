@@ -60,11 +60,11 @@ grass_img.save('pictures/grass.png')
 
 
 
-# for r in range(len(list_b_p)):
-#
-#     grass_place=((list_b_p[r][0])*consts.CELL_SIZE+150,(list_b_p[r][1])*consts.CELL_SIZE*0.500)
-#     screen.blit(grass_image,grass_place)
-#     pygame.display.flip()
+for r in range(len(list_b_p)):
+
+    grass_place=((list_b_p[r][0])*consts.CELL_SIZE+150,(list_b_p[r][1])*consts.CELL_SIZE*0.500)
+    screen.blit(grass_image,grass_place)
+    pygame.display.flip()
 
 # for r in range(len(list_b_p)):
 
