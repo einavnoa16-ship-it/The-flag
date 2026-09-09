@@ -26,4 +26,4 @@ def random_bosh(field,rows,cols):
     for i in range(consts.BOARD_ROWS):
         print(field[i],end="\n")
 
-    return field
+    return list_p
