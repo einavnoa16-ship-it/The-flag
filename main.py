@@ -15,6 +15,10 @@ pygame.display.set_caption("game")
 # background color of the screen
 screen.fill(consts.BACK_GROUND_COLOR_GREEN)
 pygame.display.flip()
+background_begin=pygame.image.load('pictures/flagStartimg.png')
+screen.blit(background_begin,(90, 50))
+pygame.display.flip()
+
 
 #clock refresh the screen
 clock=pygame.time.Clock()
@@ -97,7 +101,9 @@ while not finish:
                     y=25
                 else:
                     y += 1
-            # elif event.key==pygame.K_KP_ENTER:
+            elif event.key==pygame.K_KP_ENTER:
+                while True:
+                    pygame.time.delay(100)
 
             soldier_pos = [x, y]
 
