@@ -121,7 +121,9 @@ while not finish:
     soldier_place=[soldier_pos[0]*consts.CELL_SIZE,soldier_pos[1]*consts.CELL_SIZE]
     screen.fill(consts.BACK_GROUND_COLOR_GREEN)
     screen.blit(soldier_player, soldier_place)
+    #flag placing
     screen.blit(flag,flag_place)
+    #grass placing
     for r in range(len(list_b_p)):
         grass_place = ((list_b_p[r][0]) * consts.CELL_SIZE + 150,
                        (list_b_p[r][1]) * consts.CELL_SIZE * 0.500)

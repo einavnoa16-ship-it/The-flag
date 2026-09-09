@@ -4,6 +4,7 @@ import soldier
 from PIL import Image
 import mine
 import game_field
+import pictures
 # screen of the game
 pygame.init()
 size = (consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT)
@@ -26,24 +27,24 @@ background=(255,35,240)
 soldier_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS,consts.CELL_SIZE*consts.SOLDIER_COLS)
 soldier_pos=[0,0]#soldier.soldier_movement(pygame.event,s_place)#game_field.get_soldier_place()
 soldier_new_pos=soldier.soldier_move(soldier_pos)
-soldier_img=Image.open('pictures/soldier.png')
+soldier_img=Image.open('pictures/soldier_night.png')
 soldier_img.thumbnail(soldier_size)
-soldier_img.save('pictures/soldier.png')
-soldier_player = pygame.image.load('pictures/soldier.png').convert()
+soldier_img.save('pictures/soldier_night.png')
+soldier_player = pygame.image.load('pictures/soldier_night.png').convert()
 soldier_player.set_colorkey(background)
 soldier_place=[soldier_new_pos[0]*consts.CELL_SIZE,soldier_new_pos[1]*consts.CELL_SIZE]
 
 board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)
 
 #mine
-list_m_p=mine.list_of_mines_places(board)
-
-mine_image=pygame.image.load('pictures/mine.png')
-mine_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,(consts.CELL_SIZE*consts.SOLDIER_COLS*3)+1)
-mine_place=[0,0]
-mine_img=Image.open('pictures/mine.png')
-mine_img.thumbnail(mine_size)
-mine_img.save('pictures/mine.png')
+# list_m_p=mine.list_of_mines_places(board)
+#
+# mine_image=pygame.image.load('pictures/mine.png')
+# mine_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,(consts.CELL_SIZE*consts.SOLDIER_COLS*3)+1)
+# mine_place=[0,0]
+# mine_img=Image.open('pictures/mine.png')
+# mine_img.thumbnail(mine_size)
+# mine_img.save('pictures/mine.png')
 
 run=False
 while not run:
@@ -87,12 +88,13 @@ while not run:
     # screen.fill(consts.BACK_GROUND_COLOR_GREEN)
     screen.blit(soldier_player, soldier_place)
 
-    for r in range(len(list_m_p)):
-        mine_place=((list_m_p[r][0])* consts.CELL_SIZE + 150,(list_m_p[r][1]*consts.CELL_SIZE *3*0.500))
-        screen.blit(mine_image,mine_place)
+    # for r in range(len(list_m_p)):
+    #     mine_place=((list_m_p[r][0])* consts.CELL_SIZE + 150,(list_m_p[r][1]*consts.CELL_SIZE *3*0.500))
+    #     screen.blit(mine_image,mine_place)
 
     pygame.display.flip()
     pygame.display.update()
     clock.tick(consts.REFRESH_RATE)
 
+pygame.quit()
 
