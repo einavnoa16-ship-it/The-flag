@@ -60,11 +60,7 @@ grass_img.save('pictures/grass.png')
 
 
 
-for r in range(len(list_b_p)):
 
-    grass_place=((list_b_p[r][0])*consts.CELL_SIZE+150,(list_b_p[r][1])*consts.CELL_SIZE*0.500)
-    screen.blit(grass_image,grass_place)
-    pygame.display.flip()
 
 # for r in range(len(list_b_p)):
 
@@ -110,6 +106,11 @@ while not finish:
     screen.fill(consts.BACK_GROUND_COLOR_GREEN)
     screen.blit(soldier_player, soldier_place)
     screen.blit(flag,flag_place)
+    for r in range(len(list_b_p)):
+        grass_place = ((list_b_p[r][0]) * consts.CELL_SIZE + 150,
+                       (list_b_p[r][1]) * consts.CELL_SIZE * 0.500)
+        screen.blit(grass_image, grass_place)
+
     pygame.display.flip()
     pygame.display.update()
     clock.tick(consts.REFRESH_RATE)
