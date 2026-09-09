@@ -75,7 +75,7 @@ grass_img.thumbnail(grass_size)
 grass_img.save('pictures/grass.png')
 
 #mine
-list_m_p=mine.mine_in_random_places(20,board,consts.BOARD_ROWS, consts.SOLDIER_COLS)
+list_m_p=mine.mine_in_random_places(consts.MINES_COUNT,board,consts.BOARD_ROWS, consts.SOLDIER_COLS)
 mine_image=pygame.image.load('pictures/mine.png')
 mine_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,(consts.CELL_SIZE*consts.SOLDIER_COLS*3)+1)
 mine_place=[0,0]
@@ -139,7 +139,7 @@ while not finish:
                                      soldier_pos[1] * consts.CELL_SIZE]
                     screen.blit(night_soldier, soldier_place)
                     # pygame.display.flip()
-                    for r in range(len(list_m_p)):
+                    for r in range(0,len(list_m_p),3):
                         mine_place = (
                             (list_m_p[r][0]) * consts.CELL_SIZE + 150,
                             (list_m_p[r][1]) * consts.CELL_SIZE * 0.500)

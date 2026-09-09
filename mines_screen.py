@@ -1,5 +1,7 @@
 import consts
 import pygame
+
+import grass
 import soldier
 from PIL import Image
 import mine
@@ -35,7 +37,7 @@ def night_screen():
     soldier_player.set_colorkey(background)
     soldier_place=[soldier_new_pos[0]*consts.CELL_SIZE,soldier_new_pos[1]*consts.CELL_SIZE]
 
-    board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)
+    board=grass.random_bosh(consts.BOARD_ROWS,consts.BOARD_COLS)
 
     #mine
     list_m_p=mine.list_of_mines_places(board)
