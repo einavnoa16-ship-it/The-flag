@@ -86,9 +86,9 @@ while not run:
     screen.blit(background_night, (0, 0))
     # screen.fill(consts.BACK_GROUND_COLOR_GREEN)
     screen.blit(soldier_player, soldier_place)
-
+    pygame.display.flip()
     for r in range(0,len(list_m_p),3):
-        mine_place=((list_m_p[r][0])* consts.CELL_SIZE + 150,(list_m_p[r][1]*consts.CELL_SIZE *3*0.500))
+        mine_place=((list_m_p[r][0])* consts.CELL_SIZE + 150,list_m_p[r][1]*consts.CELL_SIZE *3*0.500)
         screen.blit(mine_image,mine_place)
 
     pygame.display.flip()

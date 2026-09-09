@@ -19,8 +19,7 @@ def list_of_mines_places(field):
                 if field[r][c]=="m":
                     l_mines_places.append(list([r,c]))
                     mone+=1
-                else:
-                    continue
+
         # for  i in range(consts.BOARD_ROWS):
         #     print(field[i],end="\n")
     return l_mines_places
