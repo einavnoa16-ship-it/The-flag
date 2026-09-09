@@ -5,6 +5,7 @@ import mine
 import soldier
 import pygame
 import pictures
+import mines_screen
 from PIL import Image
 
 # screen of the game
@@ -112,8 +113,8 @@ while not finish:
                 else:
                     y += 1
             elif event.key==pygame.K_KP_ENTER:
-                while True:
-                    pygame.time.delay(100)
+                mines_screen.night_screen()
+
 
             soldier_pos = [x, y]
 
