@@ -5,8 +5,9 @@ import mine
 import soldier
 import pygame
 import pictures
-import mines_screen
+# import mines_screen
 from PIL import Image
+import time
 
 # screen of the game
 pygame.init()
@@ -69,13 +70,13 @@ grass_img.save('pictures/grass.png')
 # list_m_p=mine.list_of_mines_places(board)
 # mine_image=pygame.image.load('pictures/mine.png')
 # mine_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,(consts.CELL_SIZE*consts.SOLDIER_COLS*3)+1)
-# mine_place=[0,0]
+# #mine_place=[0,0]
 # mine_img=Image.open('pictures/mine.png')
 # mine_img.thumbnail(mine_size)
 # mine_img.save('pictures/mine.png')
 
 
-
+background_night=pygame.image.load('pictures/bbbbbb.png')
 
 # for r in range(len(list_b_p)):
 
@@ -112,27 +113,44 @@ while not finish:
                     y=25
                 else:
                     y += 1
-            elif event.key==pygame.K_KP_ENTER:
-                mines_screen.night_screen()
-
+            # elif event.key==pygame.K_DELETE:
+            #     for i in range(1):
+            #
+            #         screen.blit(background_night,(0,0))
+            #         pygame.display.flip()
+            #         time.sleep(3)
 
             soldier_pos = [x, y]
+            if event.key == pygame.K_DELETE:
+                for i in range(1):
+                    screen.blit(background_night, (0, 0))
+                    pygame.display.flip()
+                    soldier_place = [soldier_pos[0] * consts.CELL_SIZE,
+                                     soldier_pos[1] * consts.CELL_SIZE]
+                    screen.blit(soldier_player, soldier_place)
+                    pygame.display.flip()
+                    time.sleep(3)
 
-    #soldier movement
-    soldier_place=[soldier_pos[0]*consts.CELL_SIZE,soldier_pos[1]*consts.CELL_SIZE]
-    screen.fill(consts.BACK_GROUND_COLOR_GREEN)
-    screen.blit(soldier_player, soldier_place)
-    #flag placing
-    screen.blit(flag,flag_place)
-    #grass placing
-    for r in range(len(list_b_p)):
-        grass_place = ((list_b_p[r][0]) * consts.CELL_SIZE + 150,
-                       (list_b_p[r][1]) * consts.CELL_SIZE * 0.500)
-        screen.blit(grass_image, grass_place)
 
-    pygame.display.flip()
-    pygame.display.update()
-    clock.tick(consts.REFRESH_RATE)
+        #soldier movement
+            soldier_place=[soldier_pos[0]*consts.CELL_SIZE,soldier_pos[1]*consts.CELL_SIZE]
+            screen.fill(consts.BACK_GROUND_COLOR_GREEN)
+            screen.blit(soldier_player, soldier_place)
+            #flag placing
+            screen.blit(flag,flag_place)
+            #grass placing
+            for r in range(len(list_b_p)):
+                grass_place = ((list_b_p[r][0]) * consts.CELL_SIZE + 150,
+                               (list_b_p[r][1]) * consts.CELL_SIZE * 0.500)
+                screen.blit(grass_image, grass_place)
+
+
+            pygame.display.flip()
+            pygame.display.update()
+            clock.tick(consts.REFRESH_RATE)
+
+
+
 
 
 pygame.quit()

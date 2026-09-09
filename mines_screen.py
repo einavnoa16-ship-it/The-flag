@@ -86,7 +86,6 @@ def night_screen():
 
         background_night = pygame.image.load('pictures/bbbbbb.png')
         screen.blit(background_night, (0, 0))
-        # screen.fill(consts.BACK_GROUND_COLOR_GREEN)
         screen.blit(soldier_player, soldier_place)
 
         for r in range(len(list_m_p)):
@@ -99,3 +98,51 @@ def night_screen():
 
     pygame.quit()
 
+    # event.key == pygame.K_KP_ENTER:
+    # for i in range(1):
+    #     time.sleep(1)
+    #     soldier_place = [soldier_pos[0] * consts.CELL_SIZE,
+    #                      soldier_pos[1] * consts.CELL_SIZE]
+    #     screen.blit(soldier_player, soldier_place)
+    #
+    #     background_night = pygame.image.load('pictures/bbbbbb.png')
+    #     screen.blit(background_night, (0, 0))
+    #     # screen.fill(consts.BACK_GROUND_COLOR_GREEN)
+    #     screen.blit(soldier_player, soldier_place)
+    #     for r in range(len(list_m_p)):
+    #         mine_place = (
+    #             (list_m_p[r][0]) * consts.CELL_SIZE + 150,
+    #             (list_m_p[r][1] * consts.CELL_SIZE * 3 * 0.500))
+    #         screen.blit(mine_image, mine_place)
+    #
+    #     pygame.display.flip()
+    #
+    #
+    #
+    #
+    #
+    #
+    # for event in pygame.event.get():
+    #     if event.type==pygame.QUIT:
+    #         finish=True
+    #     elif event.type==pygame.KEYDOWN:
+    #
+    #         if event.key==pygame.K_KP_ENTER:
+    #             for i in range(1):
+    #                 time.sleep(1)
+    #                 soldier_place = [soldier_pos[0] * consts.CELL_SIZE,
+    #                                  soldier_pos[1] * consts.CELL_SIZE]
+    #                 screen.blit(soldier_player, soldier_place)
+    #
+    #                 background_night = pygame.image.load('pictures/bbbbbb.png')
+    #                 screen.blit(background_night, (0, 0))
+    #                 # screen.fill(consts.BACK_GROUND_COLOR_GREEN)
+    #                 screen.blit(soldier_player, soldier_place)
+    #                 for r in range(len(list_m_p)):
+    #                     mine_place = (
+    #                         (list_m_p[r][0]) * consts.CELL_SIZE + 150,
+    #                         (list_m_p[r][1] * consts.CELL_SIZE * 3 * 0.500))
+    #                     screen.blit(mine_image, mine_place)
+    #
+    #                 # pygame.display.flip()
+    #
