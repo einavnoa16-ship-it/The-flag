@@ -1,6 +1,7 @@
 import consts
 import game_field
 import grass
+import mine
 import soldier
 import pygame
 import pictures
@@ -53,6 +54,8 @@ pygame.display.flip()
 # pygame.display.flip()
 #-------------for loop on bush places
 board=game_field.creat_field(consts.BOARD_ROWS,consts.BOARD_COLS)
+
+
 list_b_p=grass.random_bosh(board,consts.BOARD_ROWS,consts.BOARD_COLS)
 grass_image=pygame.image.load('pictures/grass.png')
 grass_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,consts.CELL_SIZE*consts.SOLDIER_COLS+1)
@@ -61,7 +64,14 @@ grass_img=Image.open('pictures/grass.png')
 grass_img.thumbnail(grass_size)
 grass_img.save('pictures/grass.png')
 
-
+#mine
+# list_m_p=mine.list_of_mines_places(board)
+# mine_image=pygame.image.load('pictures/mine.png')
+# mine_size=(consts.CELL_SIZE*consts.SOLDIER_ROWS-1,(consts.CELL_SIZE*consts.SOLDIER_COLS*3)+1)
+# mine_place=[0,0]
+# mine_img=Image.open('pictures/mine.png')
+# mine_img.thumbnail(mine_size)
+# mine_img.save('pictures/mine.png')
 
 
 
